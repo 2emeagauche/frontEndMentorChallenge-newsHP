@@ -62,22 +62,37 @@ header{
     & > img {
         height: 2rem;
     }
+    & > button{
+        order: 3;
+    }
     #mainNav{
-        width: auto;
-        height: auto;
-        position: absolute;
-        z-index: 1;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        transition: background-color 0.2s;
+        // width: auto;
+        // height: auto;
+        position: static;
+        // z-index: 0;
+        // top: 0px;
+        // right: 0px;
+        // bottom: 0px;
+        // left: 0px;
+        // transition: background-color 0.2s;
+        &:after{
+            content:'';
+            position: absolute;
+            z-index: 1;
+            width: auto;
+            height: auto;
+            left: 0;
+            right: auto;
+            top: 0;
+            bottom: 0;
+            transition: background-color 0.2s;
+        }
         .mainMenu{
             background: $white;
             width: auto;
             height: auto;
-            position: absolute;
-            z-index: 0;
+            position: fixed;
+            z-index: 2;
             top: 0px;
             right: -70vw;
             bottom: 0px;
@@ -102,7 +117,10 @@ header{
             }
         }
         &.menuOpen{
-            background: rgba($color: #000000, $alpha: 0.5);
+            &:after{
+                right: 0;
+                background: rgba($color: #000000, $alpha: 0.5);
+            }
             .mainMenu{
                 left: 30vw;
                 right: 0vw;
