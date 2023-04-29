@@ -15,6 +15,7 @@
 .DS_Store
 .prettierignore
 README-template.md
-./design
 style-guide.md
-design
+/design
+
+/node_modules
