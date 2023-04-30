@@ -66,15 +66,7 @@ header{
         order: 3;
     }
     #mainNav{
-        // width: auto;
-        // height: auto;
         position: static;
-        // z-index: 0;
-        // top: 0px;
-        // right: 0px;
-        // bottom: 0px;
-        // left: 0px;
-        // transition: background-color 0.2s;
         &:after{
             content:'';
             position: absolute;
