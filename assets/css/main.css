@@ -115,12 +115,6 @@ button:focus-visible {
   outline-color: transparent;
 }
 
-.attribution {
-  position: absolute;
-  bottom: 0;
-  font-size: 11px;
-}
-
 .wrapper {
   max-width: 1110px;
 }
@@ -133,13 +127,22 @@ button:focus-visible {
 .top-main-header > img {
   height: 2rem;
 }
-.top-main-header > button {
+.top-main-header .btn-open-menu {
   order: 3;
 }
-.top-main-header #main-nav {
+@media screen and (min-width: 500px) {
+  .top-main-header > img {
+    height: 42px;
+  }
+  .top-main-header .mobile-only {
+    display: none;
+  }
+}
+
+.main-nav {
   position: static;
 }
-.top-main-header #main-nav:after {
+.main-nav:after {
   content: "";
   position: absolute;
   z-index: 1;
@@ -151,7 +154,23 @@ button:focus-visible {
   bottom: 0;
   transition: background-color 0.2s;
 }
-.top-main-header #main-nav .main-menu {
+.main-nav.menu-open:after {
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.main-nav.menu-open .main-menu {
+  left: 30vw;
+  right: 0vw;
+}
+@media screen and (min-width: 500px) {
+  .main-nav {
+    position: static;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.main-menu {
   background: hsl(36, 100%, 99%);
   width: auto;
   height: auto;
@@ -166,51 +185,32 @@ button:focus-visible {
   align-items: start;
   transition: all 0.2s;
 }
-.top-main-header #main-nav .main-menu ul {
+.main-menu ul {
   font-size: 1.2rem;
   padding-left: 2rem;
   margin-top: 7rem;
   color: hsl(240, 100%, 5%);
 }
-.top-main-header #main-nav .main-menu ul li {
+.main-menu li {
   margin-bottom: 0.8rem;
 }
-.top-main-header #main-nav .main-menu .close-menu {
+.main-menu .btn-close-menu {
   position: absolute;
   top: 0.9rem;
   right: 1rem;
 }
-.top-main-header #main-nav.menu-open:after {
-  right: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
-.top-main-header #main-nav.menu-open .main-menu {
-  left: 30vw;
-  right: 0vw;
-}
 @media screen and (min-width: 500px) {
-  .top-main-header > img {
-    height: 42px;
-  }
-  .top-main-header .mobile-only {
-    display: none;
-  }
-  .top-main-header #main-nav {
-    position: static;
-    display: flex;
-    align-items: center;
-  }
-  .top-main-header #main-nav .main-menu {
+  .main-menu {
     position: static;
     display: block;
   }
-  .top-main-header #main-nav .main-menu ul {
+  .main-menu ul {
     margin: 0px;
     padding: 0px;
     font-size: 1rem;
     color: hsl(236, 13%, 42%);
   }
-  .top-main-header #main-nav .main-menu ul li {
+  .main-menu li {
     display: inline-block;
     margin-bottom: 0px;
     margin-left: 40px;
@@ -374,6 +374,12 @@ h1 {
   .main-footer ol li {
     margin-bottom: 0px;
   }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 11px;
 }
 
 /*# sourceMappingURL=main.css.map */
