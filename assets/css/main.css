@@ -89,24 +89,30 @@ body {
   line-height: 1.7;
 }
 
+a {
+  outline-color: transparent;
+}
 a:link, a:visited, a:hover, a:active {
   color: inherit;
   text-decoration: none;
 }
-a:focus {
+a:focus-visible {
   text-decoration: underline;
-  outline: none;
+  outline-color: transparent;
 }
-a:hover, a:focus {
+a:hover, a:focus-visible {
   color: hsl(5, 85%, 63%);
 }
 
 button {
   border-radius: 0px;
   border-width: 0px;
-  outline-style: none;
+  outline-color: transparent;
   background: none;
   cursor: pointer;
+}
+button:focus-visible {
+  outline-color: transparent;
 }
 
 .attribution {
@@ -119,21 +125,21 @@ button {
   max-width: 1110px;
 }
 
-header {
+.top-main-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2rem;
 }
-header > img {
+.top-main-header > img {
   height: 2rem;
 }
-header > button {
+.top-main-header > button {
   order: 3;
 }
-header #mainNav {
+.top-main-header #main-nav {
   position: static;
 }
-header #mainNav:after {
+.top-main-header #main-nav:after {
   content: "";
   position: absolute;
   z-index: 1;
@@ -145,7 +151,7 @@ header #mainNav:after {
   bottom: 0;
   transition: background-color 0.2s;
 }
-header #mainNav .mainMenu {
+.top-main-header #main-nav .main-menu {
   background: hsl(36, 100%, 99%);
   width: auto;
   height: auto;
@@ -160,35 +166,86 @@ header #mainNav .mainMenu {
   align-items: start;
   transition: all 0.2s;
 }
-header #mainNav .mainMenu ul {
+.top-main-header #main-nav .main-menu ul {
   font-size: 1.2rem;
   padding-left: 2rem;
   margin-top: 7rem;
   color: hsl(240, 100%, 5%);
 }
-header #mainNav .mainMenu ul li {
+.top-main-header #main-nav .main-menu ul li {
   margin-bottom: 0.8rem;
 }
-header #mainNav .mainMenu .close-menu {
+.top-main-header #main-nav .main-menu .close-menu {
   position: absolute;
   top: 0.9rem;
   right: 1rem;
 }
-header #mainNav.menuOpen:after {
+.top-main-header #main-nav.menu-open:after {
   right: 0;
   background: rgba(0, 0, 0, 0.5);
 }
-header #mainNav.menuOpen .mainMenu {
+.top-main-header #main-nav.menu-open .main-menu {
   left: 30vw;
   right: 0vw;
 }
+@media screen and (min-width: 500px) {
+  .top-main-header > img {
+    height: 42px;
+  }
+  .top-main-header .mobile-only {
+    display: none;
+  }
+  .top-main-header #main-nav {
+    position: static;
+    display: flex;
+    align-items: center;
+  }
+  .top-main-header #main-nav .main-menu {
+    position: static;
+    display: block;
+  }
+  .top-main-header #main-nav .main-menu ul {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1rem;
+    color: hsl(236, 13%, 42%);
+  }
+  .top-main-header #main-nav .main-menu ul li {
+    display: inline-block;
+    margin-bottom: 0px;
+    margin-left: 40px;
+  }
+}
 
-.presentation {
+.main-section {
   margin-bottom: 70px;
+}
+@media screen and (min-width: 500px) {
+  .main-section {
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+  }
 }
 
 .main-visual-container {
   margin-bottom: 1rem;
+}
+@media screen and (min-width: 500px) {
+  .main-visual-container {
+    grid-column: span 2;
+    margin-bottom: 0px;
+  }
 }
 
 h1 {
@@ -198,9 +255,20 @@ h1 {
   line-height: 1em;
   margin: 0rem 0rem 1rem;
 }
+@media screen and (min-width: 500px) {
+  h1 {
+    margin-bottom: 0px;
+    font-size: 4rem;
+  }
+}
 
-.aside-title p {
+.beside-main-title p {
   margin-bottom: 1rem;
+}
+@media screen and (min-width: 500px) {
+  .beside-main-title p {
+    margin-bottom: 35px;
+  }
 }
 
 .cta {
@@ -216,142 +284,94 @@ h1 {
   transition: all 300ms;
 }
 
-aside {
+.main-aside {
   background: hsl(240, 100%, 5%);
   color: hsl(233, 8%, 79%);
   padding: 1rem 20px 2rem;
   margin-bottom: 70px;
 }
-aside h2 {
+.main-aside h2 {
   color: hsl(35, 77%, 62%);
   font-weight: 700;
   font-size: 2rem;
   line-height: 1em;
   margin-bottom: 1.5rem;
 }
-aside h3 {
+.main-aside h3 {
   color: hsl(36, 100%, 99%);
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
-aside ul {
+.main-aside ul {
   padding-left: 0px;
   margin: 0;
 }
-aside li {
+.main-aside li {
   border-bottom: 1px solid hsl(236, 13%, 42%);
   padding-bottom: 1.5rem;
   margin-bottom: 1.5rem;
 }
-aside li:last-of-type {
+.main-aside li:last-of-type {
   border-bottom-width: 0px;
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
-aside a:hover, aside a:focus {
+.main-aside a:hover, .main-aside a:focus {
   color: hsl(35, 77%, 62%);
 }
+@media screen and (min-width: 500px) {
+  .main-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .main-aside h2 {
+    font-size: 2.7rem;
+    font-weight: 600;
+  }
+}
 
-footer {
+.main-footer {
   margin-bottom: 80px;
 }
-footer ol {
+.main-footer ol {
   padding-left: 0px;
   margin: 0px;
 }
-footer li {
+.main-footer li {
   margin-bottom: 2rem;
   padding-left: 125px;
   position: relative;
   min-height: 125px;
 }
-footer li > img {
+.main-footer li > img {
   width: 100px;
   position: absolute;
   top: 0px;
   left: 0px;
 }
-footer li h2 {
+.main-footer li h2 {
   font-size: 2rem;
   color: hsl(233, 8%, 79%);
   line-height: 1;
   margin-bottom: 1rem;
 }
-footer li h3 {
+.main-footer li h3 {
   font-size: 1.1rem;
   line-height: 1.2;
   margin-bottom: 0.3rem;
   color: hsl(240, 100%, 5%);
 }
-
 @media screen and (min-width: 500px) {
-  header > img {
-    height: 42px;
-  }
-  header .mobile-only {
-    display: none;
-  }
-  header #mainNav {
-    position: static;
-    display: flex;
-    align-items: center;
-  }
-  header #mainNav .mainMenu {
-    position: static;
-    display: block;
-  }
-  header #mainNav .mainMenu ul {
-    margin: 0px;
-    padding: 0px;
-    font-size: 1rem;
-    color: hsl(236, 13%, 42%);
-  }
-  header #mainNav .mainMenu ul li {
-    display: inline-block;
+  .main-footer {
     margin-bottom: 0px;
-    margin-left: 40px;
   }
-  main {
+  .main-footer ol {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 30px;
   }
-  aside {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  aside h2 {
-    font-size: 2.7rem;
-    font-weight: 600;
-  }
-  .presentation {
-    grid-column: 1/3;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 30px;
-    row-gap: 30px;
-  }
-  .main-visual-container {
-    grid-column: span 2;
-    margin-bottom: 0px;
-  }
-  h1 {
-    margin-bottom: 0px;
-    font-size: 4rem;
-  }
-  .aside-title p {
-    margin-bottom: 35px;
-  }
-  footer {
-    margin-bottom: 0px;
-  }
-  footer ol {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 30px;
-  }
-  footer ol li {
+  .main-footer ol li {
     margin-bottom: 0px;
   }
 }
