@@ -1,7 +1,26 @@
+a {
+    outline-color: transparent;
+    &:link, &:visited, &:hover, &:active{
+        color: inherit;
+        text-decoration: none;
+    }
+    &:focus-visible{
+        text-decoration: underline;
+        outline-color: transparent;
+    }
+    &:hover, &:focus-visible{
+        color: $red;
+    }
 
-$orange: hsl(35, 77%, 62%);
-$red: hsl(5, 85%, 63%);
-$white: hsl(36, 100%, 99%);
-$blueish: hsl(233, 8%, 79%);
-$blue: hsl(236, 13%, 42%);
-$dark-blue: hsl(240, 100%, 5%);
+}
+
+button{
+    border-radius: 0px;
+    border-width: 0px;
+    outline-color: transparent;
+    background: none;
+    cursor: pointer;
+    &:focus-visible{
+        outline-color: transparent;
+    }
+}

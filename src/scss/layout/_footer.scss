@@ -1,0 +1,43 @@
+.main-footer{
+    margin-bottom: 80px;
+    ol{
+        padding-left: 0px;
+        margin: 0px;
+    }
+    li{
+        margin-bottom: 2rem;
+        padding-left: 125px;
+        position: relative;
+        min-height: 125px;
+        &>img{
+            width: 100px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        h2{
+            font-size: 2rem;
+            color: $blueish;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        h3{
+            font-size: 1.1rem;
+            line-height: 1.2;
+            margin-bottom: 0.3rem;
+            color: $dark-blue;
+        }
+    }
+
+    @media screen and (min-width: 500px) {
+        margin-bottom: 0px;
+        ol{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 30px;
+            li{
+                margin-bottom: 0px;
+            }
+        }
+    }
+}

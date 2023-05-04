@@ -1,0 +1,26 @@
+html{
+    font-size: $base-fs;
+}
+
+body{
+    background: $white;
+    color: $blue;
+    font-family: $base-ff;
+    font-size: $base-fs;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+    line-height: 1.7;
+}
+
+.wrapper{
+    max-width: 1110px;
+}
+
+.attribution{
+    position: absolute;
+    bottom:0;
+    font-size: 11px;
+}
