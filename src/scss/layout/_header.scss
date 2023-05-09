@@ -9,7 +9,7 @@
         order: 3;
     }
     
-    @media screen and (min-width: 500px) {
+    @include large-screen {
         & > img{
             height: 42px;
         }
@@ -44,7 +44,7 @@
         }
     }
 
-    @media screen and (min-width: 500px) {
+    @include large-screen {
         position: static;
         display: flex;
         align-items: center;
@@ -80,7 +80,7 @@
         right: 1rem;
     }
 
-    @media screen and (min-width: 500px) {
+    @include large-screen {
         position: static;
         display: block;
         ul {

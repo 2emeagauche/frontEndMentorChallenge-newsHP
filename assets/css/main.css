@@ -227,7 +227,7 @@ button:focus-visible {
   .main-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 30px;
+    column-gap: 2rem;
   }
 }
 
@@ -239,8 +239,8 @@ button:focus-visible {
     grid-column: 1/3;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 30px;
-    row-gap: 30px;
+    column-gap: 2rem;
+    row-gap: 2rem;
   }
 }
 
@@ -375,7 +375,7 @@ h1 {
   .main-footer ol {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 30px;
+    column-gap: 2rem;
   }
   .main-footer ol li {
     margin-bottom: 0px;

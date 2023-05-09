@@ -29,12 +29,12 @@
         }
     }
 
-    @media screen and (min-width: 500px) {
+    @include large-screen {
         margin-bottom: 0px;
         ol{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            column-gap: 30px;
+            column-gap: $grid-gap;
             li{
                 margin-bottom: 0px;
             }
